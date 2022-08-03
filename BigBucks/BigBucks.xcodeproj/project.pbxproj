@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04591E53289A976100D7BCD3 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04591E52289A976100D7BCD3 /* Intro.swift */; };
+		04591E55289A978500D7BCD3 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04591E54289A978500D7BCD3 /* Home.swift */; };
 		048772C5289961F100F156A8 /* BigBucksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048772B5289961F000F156A8 /* BigBucksApp.swift */; };
 		048772C6289961F100F156A8 /* BigBucksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048772B5289961F000F156A8 /* BigBucksApp.swift */; };
 		048772C7289961F100F156A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048772B6289961F000F156A8 /* ContentView.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04591E52289A976100D7BCD3 /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
+		04591E54289A978500D7BCD3 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		048772B5289961F000F156A8 /* BigBucksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigBucksApp.swift; sourceTree = "<group>"; };
 		048772B6289961F000F156A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		048772B7289961F100F156A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 		048772D9289980A500F156A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04591E54289A978500D7BCD3 /* Home.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 		048772DA289980AC00F156A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04591E52289A976100D7BCD3 /* Intro.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,6 +204,8 @@
 			files = (
 				048772C7289961F100F156A8 /* ContentView.swift in Sources */,
 				048772C5289961F100F156A8 /* BigBucksApp.swift in Sources */,
+				04591E55289A978500D7BCD3 /* Home.swift in Sources */,
+				04591E53289A976100D7BCD3 /* Intro.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
