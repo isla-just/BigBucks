@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct Home: View {
+    @State private var showWelcomeView = false
+    
     // MARK: - INTROS
     @State var intros: [Intro] = [
         Intro(title: "Join the family", logo:"logo2", subTitle: "learn how to manage your big bucks every month", description: "na", img: "Onboard1", color: Color("White"), accent: Color("DarkText")),
@@ -25,6 +27,8 @@ struct Home: View {
     @State var currentIndex: Int = 0
     
     var body: some View {
+        
+
         ZStack {
             ForEach(intros.indices.reversed(), id: \.self){index in
                 //Intro View
@@ -33,6 +37,8 @@ struct Home: View {
                     .padding(.trailing, fakeIndex == index ? 0: 0)
                     .ignoresSafeArea()
             }
+            
+
             HStack(spacing: 8) {
                 ForEach(0..<intros.count - 2, id: \.self){index in
                     Circle()
@@ -43,10 +49,9 @@ struct Home: View {
                 }
                 
                 Spacer()
-                
-                Button{
+       
+                    Button(action: { showWelcomeView = true }){
                     
-                } label: {
                     Text("Let's Start")
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -54,10 +59,13 @@ struct Home: View {
                         .background(Color("DarkText"))
                         .clipShape(Capsule())
                 }
+//                NavigationLink("", destination:  Login(), isActive: $showWelcomeView)
             }
-            .padding()
+           
             .padding(.horizontal)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                
+            
         }
         .overlay(
             
