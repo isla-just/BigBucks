@@ -100,7 +100,7 @@ struct SignUp: View {
                         .font(.system(size: 18, weight: .regular)).foregroundColor(Color("DarkText"))
                 }
 
-                NavigationLink(destination: Login()){
+                NavigationLink(destination: SignUp1()){
                   
                 ZStack{
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
@@ -143,7 +143,7 @@ struct SignUp: View {
                     .frame(height: 450.0)
             }.padding(.leading, 100.0).frame(height: 450, alignment: .trailing).padding(.top, -470).zIndex(100)
     }
-    }
+    }.navigationBarBackButtonHidden(true)
     }
 }
 

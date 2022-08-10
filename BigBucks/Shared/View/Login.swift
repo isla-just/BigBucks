@@ -94,7 +94,7 @@ struct Login: View {
                         .multilineTextAlignment(.trailing).foregroundColor(Color("DarkText")).padding(.top, 1)
                 }
                 
-                NavigationLink(destination: SignUp()){
+                NavigationLink(destination: Dashboard()){
                   
 
                 ZStack{
@@ -108,7 +108,7 @@ struct Login: View {
                         .multilineTextAlignment(.center).foregroundColor(.white)
                         .padding(.horizontal, 50).padding(.top, 20)
                 }
-                }.navigationBarBackButtonHidden(true) 
+                }.navigationBarBackButtonHidden(true)
                     
                 HStack(alignment: .center){
                     Text("Don't have an account yet?")
@@ -138,7 +138,7 @@ struct Login: View {
                     .frame(height: 450.0)
             }.padding(.leading, 100.0).frame(height: 450, alignment: .trailing).padding(.top, -470).zIndex(100)
     }
-    }
+    }.navigationBarBackButtonHidden(true)
     }
 }
 

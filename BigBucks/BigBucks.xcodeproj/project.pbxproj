@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		04336CF228A3E9C900C3CCEF /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04336CF128A3E9C900C3CCEF /* SignUp.swift */; };
+		04336CF428A3F15C00C3CCEF /* SignUp1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04336CF328A3F15C00C3CCEF /* SignUp1.swift */; };
+		04336CF628A3F4AC00C3CCEF /* SignUp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04336CF528A3F4AC00C3CCEF /* SignUp2.swift */; };
+		04336CF828A3FC8B00C3CCEF /* SignUp3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04336CF728A3FC8B00C3CCEF /* SignUp3.swift */; };
+		04336CFA28A3FE2C00C3CCEF /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04336CF928A3FE2C00C3CCEF /* Dashboard.swift */; };
+		04336CFC28A4025000C3CCEF /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04336CFB28A4025000C3CCEF /* Details.swift */; };
+		04336CFF28A40C5600C3CCEF /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04336CFE28A40C5600C3CCEF /* Navigation.swift */; };
 		04591E53289A976100D7BCD3 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04591E52289A976100D7BCD3 /* Intro.swift */; };
 		04591E55289A978500D7BCD3 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04591E54289A978500D7BCD3 /* Home.swift */; };
 		048772C5289961F100F156A8 /* BigBucksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048772B5289961F000F156A8 /* BigBucksApp.swift */; };
@@ -22,6 +28,12 @@
 
 /* Begin PBXFileReference section */
 		04336CF128A3E9C900C3CCEF /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		04336CF328A3F15C00C3CCEF /* SignUp1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp1.swift; sourceTree = "<group>"; };
+		04336CF528A3F4AC00C3CCEF /* SignUp2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp2.swift; sourceTree = "<group>"; };
+		04336CF728A3FC8B00C3CCEF /* SignUp3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp3.swift; sourceTree = "<group>"; };
+		04336CF928A3FE2C00C3CCEF /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		04336CFB28A4025000C3CCEF /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		04336CFE28A40C5600C3CCEF /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		04591E52289A976100D7BCD3 /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
 		04591E54289A978500D7BCD3 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		048772B5289961F000F156A8 /* BigBucksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigBucksApp.swift; sourceTree = "<group>"; };
@@ -52,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04336CFD28A40C3600C3CCEF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				04336CFE28A40C5600C3CCEF /* Navigation.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		048772AF289961F000F156A8 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +85,7 @@
 		048772B4289961F000F156A8 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				04336CFD28A40C3600C3CCEF /* Components */,
 				048772DA289980AC00F156A8 /* Model */,
 				048772D9289980A500F156A8 /* View */,
 				048772B5289961F000F156A8 /* BigBucksApp.swift */,
@@ -97,6 +118,11 @@
 				04591E54289A978500D7BCD3 /* Home.swift */,
 				04F3025828A2A05A00A0F068 /* Login.swift */,
 				04336CF128A3E9C900C3CCEF /* SignUp.swift */,
+				04336CF328A3F15C00C3CCEF /* SignUp1.swift */,
+				04336CF528A3F4AC00C3CCEF /* SignUp2.swift */,
+				04336CF728A3FC8B00C3CCEF /* SignUp3.swift */,
+				04336CF928A3FE2C00C3CCEF /* Dashboard.swift */,
+				04336CFB28A4025000C3CCEF /* Details.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,11 +234,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04336CF628A3F4AC00C3CCEF /* SignUp2.swift in Sources */,
 				048772C7289961F100F156A8 /* ContentView.swift in Sources */,
+				04336CFA28A3FE2C00C3CCEF /* Dashboard.swift in Sources */,
+				04336CFF28A40C5600C3CCEF /* Navigation.swift in Sources */,
 				04336CF228A3E9C900C3CCEF /* SignUp.swift in Sources */,
 				04F3025928A2A05A00A0F068 /* Login.swift in Sources */,
 				048772C5289961F100F156A8 /* BigBucksApp.swift in Sources */,
+				04336CFC28A4025000C3CCEF /* Details.swift in Sources */,
+				04336CF428A3F15C00C3CCEF /* SignUp1.swift in Sources */,
 				04591E55289A978500D7BCD3 /* Home.swift in Sources */,
+				04336CF828A3FC8B00C3CCEF /* SignUp3.swift in Sources */,
 				04591E53289A976100D7BCD3 /* Intro.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
