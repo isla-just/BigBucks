@@ -230,7 +230,7 @@ struct Dashboard: View {
                        
                         
                     }.padding(0).padding(.leading, -25)
-                }.padding(10)
+                }.padding(10).frame(width: .infinity, height: 350)
                 
                 
                 
@@ -260,10 +260,6 @@ struct Dashboard: View {
                                 .font(.system(size: 20, weight: .regular))
                                 .multilineTextAlignment(.center).foregroundColor(.white)
                         }.padding(.top, -20).padding()
-                        
-                        
-                    
-                        
                         
                     }.padding(.horizontal, 30)
                 }

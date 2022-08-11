@@ -28,7 +28,7 @@ struct Home: View {
     
     var body: some View {
         
-
+        NavigationView{
         ZStack {
             ForEach(intros.indices.reversed(), id: \.self){index in
                 //Intro View
@@ -37,21 +37,19 @@ struct Home: View {
                     .padding(.trailing, fakeIndex == index ? 0: 0)
                     .ignoresSafeArea()
             }
-            
 
             HStack(spacing: 8) {
                 ForEach(0..<intros.count - 2, id: \.self){index in
                     Circle()
                         .fill(Color("DarkText"))
-                        .frame(width: 8, height: 8)
+                        .frame(width: 10, height: 10)
                         .scaleEffect(currentIndex == index ? 1.15 : 0.85)
                         .opacity(currentIndex == index ? 1 : 0.25)
                 }
                 
                 Spacer()
        
-                    Button(action: { showWelcomeView = true }){
-                    
+                NavigationLink(destination: Login()){
                     Text("Let's Start")
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -59,14 +57,14 @@ struct Home: View {
                         .background(Color("DarkText"))
                         .clipShape(Capsule())
                 }
-//                NavigationLink("", destination:  Login(), isActive: $showWelcomeView)
             }
            
-            .padding(.horizontal)
+            .padding(.horizontal, 30.0)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                 
             
         }
+        
         .overlay(
             
             Button(action: {
@@ -129,9 +127,9 @@ struct Home: View {
             .offset(y: 53)
             .opacity(isDragging ? 0 : 1)
             .animation(.linear, value: isDragging)
-            
-            
+
             ,alignment: .topTrailing
+
         )
         .onAppear{
             guard let first = intros.first else {
@@ -149,6 +147,7 @@ struct Home: View {
             
             fakeIndex = 1
         }
+        }.navigationBarBackButtonHidden(true)
     }
     
     @ViewBuilder
