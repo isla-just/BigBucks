@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct Settings: View {
+    
+    @AppStorage("isDarkMode") private var isDarkMode = false
+    @Environment(\.colorScheme) var colorScheme
+    
+    
     var body: some View {
         NavigationView{
         ZStack(){
@@ -56,66 +61,79 @@ struct Settings: View {
                  
                 }.padding(-40)
                 
-            } .frame(maxWidth: .infinity, maxHeight: 200)
+            } .frame(maxWidth: .infinity, maxHeight: 150)
             
 
             VStack(){
                 Text("settings")
                     .font(.system(size: 20, weight: .medium))
                     .multilineTextAlignment(.center).foregroundColor(Color("DarkText")).padding(.top, 50)
+                    .frame(maxWidth: .infinity)
                 
-                Image("logo2").resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.leading, 80.0)
-                    .frame(width: 201)
+                
+                Image("logo2") .resizable()
+                    .aspectRatio(contentMode: .fit).frame(width: 230).padding(25)
+ 
 
-                Text("Pocket money management app for kids. Teaching them how to manage money")
-                    .font(.system(size: 20, weight: .regular))
+                Text("Pocket money management app for \n kids. Teaching them how to \n manage money")
+                    .font(.system(size: 22, weight: .regular))
+                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText")).padding()    .lineLimit(nil)
+                    .fixedSize()
+
+
+                Spacer()
+                
+                Text("You are using v 1.0")
+                    .font(.system(size: 22, weight: .regular))
                     .multilineTextAlignment(.center).foregroundColor(Color("DarkText")).padding(.top, 1)
 
+                Link("Developed by isla-just", destination: URL(string: "https://github.com/isla-just")!)  .font(.system(size: 20, weight: .regular))
+                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText")).padding(.top, -7).opacity(0.7)
+            
 
-                ZStack{
-                    RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .fill(Color("DarkText").opacity(0.1))
-                        .frame(width: .infinity, height: 70)
-                        .padding(.horizontal, 35).padding(.top, 20)
-
-
-
-                    TextField("Pin", text: .constant("Pin"))
-                        .background(Color.red.opacity(0))
-                        .cornerRadius(5)
-                        .padding(.horizontal, 50).padding(.top, 20) .accentColor(Color("Primary"))
-                        .font(.system(size: 18, weight: .regular)).foregroundColor(Color("DarkText"))
-                }.padding(.top, 100.0)
+     
+                Spacer()
                 
-                NavigationLink(destination: SignUp3()){
-                  
+                
+                ZStack{
 
+                    Text("")
+                      .frame(width: .infinity, height: 60)
+                      .padding(.horizontal, 165).padding(4)
+                      .font(.system(size: 22, weight: .medium))
+                      .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 25)
+                                .stroke(Color("DarkText"), lineWidth: 1)
+                    )
+                    
+                    VStack{
+                        Picker("Mode", selection: $isDarkMode){
+                            Text("Pretty pink").tag(false)
+                            Text("Bubble gum").tag(true)
+                        }
+                    }.opacity(1).accentColor(Color("DarkText"))
+
+                }.padding(.bottom, -10)
+             
+                NavigationLink(destination: Dashboard()){
+                  
                 ZStack{
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
                         .fill(Color("DarkText"))
                         .frame(width: .infinity, height: 70)
                         .padding(.horizontal, 35).padding(.top, 20)
 
-                    Text("Done")
+                    Text("Back Home")
                         .font(.system(size: 22, weight: .medium))
                         .multilineTextAlignment(.center).foregroundColor(.white)
                         .padding(.horizontal, 50).padding(.top, 20)
-                }.padding(.top, 150.0)
-                }.navigationBarBackButtonHidden(true)
+                }.padding(.bottom, 10)
+                }
+                Spacer()
                 
-                HStack{
-                    Circle()
-                        .fill(Color("Primary"))
-                        .frame(width: 13, height: 13)
-                    Circle()
-                        .fill(Color("Primary").opacity(0.6))
-                        .frame(width: 8, height: 8)
-                    
-                }.padding(.top, 20.0)
               
-            }.padding(.bottom,  190.0).background().cornerRadius(38)
+            }.padding(.bottom,  -15.0).background(.white).cornerRadius(38)    .frame(maxWidth: .infinity, maxHeight: .infinity)
           
 
         }

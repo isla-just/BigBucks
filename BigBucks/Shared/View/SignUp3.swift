@@ -129,7 +129,7 @@ struct SignUp3: View {
                     
                 }.padding(.top, 20.0)
               
-            }.padding(.bottom,  190.0).background().cornerRadius(38)
+            }.padding(.bottom,  190.0).background(.white).cornerRadius(38)
           
 
         }

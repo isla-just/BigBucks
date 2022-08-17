@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct Details: View {
-    
-    
+
     
     // MARK: - Properties
     var spend: Spend
@@ -127,13 +126,12 @@ struct Details: View {
                         .frame(width: .infinity, height: 140)
                         .padding(.horizontal, 35).padding(.top, 20)
 
-
-
-                    TextEditor(text: .constant(spend.notes))
-                        .colorMultiply(Color("Card"))
+                    Text(spend.notes) .colorMultiply(Color("Card"))
+                        .background(Color("Card"))
                         .cornerRadius(5)
-                        .padding(.horizontal, 60).padding(.top, 40) .accentColor(Color("Primary"))
+                        .padding(.horizontal, 60).padding(.top, -20) .accentColor(Color("Accent"))
                         .font(.system(size: 18, weight: .regular)).foregroundColor(Color("DarkText"))
+
                 }.padding(.top, 20.0)
                 
                 NavigationLink(destination: Dashboard()){
@@ -152,7 +150,7 @@ struct Details: View {
                 }.padding(.top, 0.0)
                 }.navigationBarBackButtonHidden(true)
                 
-            }.padding(.bottom,  190.0).background().cornerRadius(38)
+            }.padding(.bottom,  190.0).background(.white).cornerRadius(38)
           
 
         }

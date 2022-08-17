@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Dashboard: View {
     
+    
     // MARK: - properties
     var spends: [Spend] = SpendData
     
@@ -45,13 +46,13 @@ struct Dashboard: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 20, height: 20, alignment: .center)
-                            .padding(.leading, 60).padding(.top, 20) .foregroundColor(Color("Primary"))
+                            .padding(.leading, 60).padding(.top, 20) .foregroundColor(Color("DarkText"))
                         
                         
                         TextField("Search spending", text: .constant(""))
                             .background(Color.red.opacity(0))
                             .cornerRadius(5)
-                            .padding(.horizontal, 10).padding(.top, 20) .accentColor(Color("Primary"))
+                            .padding(.horizontal, 10).padding(.top, 20) .accentColor(Color("Accent"))
                             .font(.system(size: 18, weight: .regular)).foregroundColor(Color("DarkText"))
                     }
                   
@@ -157,11 +158,13 @@ struct Dashboard: View {
                                 .multilineTextAlignment(.center).foregroundColor(.white)
                         }.padding(.top, -20).padding()
 
+                        NavigationLink(destination: Calculate()){
                         VStack{
                             Text("calculator")
                                 .font(.system(size: 20, weight: .regular))
                                 .multilineTextAlignment(.center).foregroundColor(.white)
                         }.padding(.top, -20).padding()
+                        }
 
                         NavigationLink(destination: Settings()){
                             VStack{
@@ -177,7 +180,7 @@ struct Dashboard: View {
                 
                 
 
-            }.padding(.bottom, 0).background().cornerRadius(38).padding(.top, -90)
+            }.padding(.bottom, 0).background(.white).cornerRadius(38).padding(.top, -90)
           
 
         }

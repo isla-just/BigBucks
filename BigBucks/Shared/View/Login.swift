@@ -123,7 +123,7 @@ struct Login: View {
                 }
                 .padding(.top)
 
-            }.padding(.bottom,  120.0).background().cornerRadius(38)
+            }.padding(.bottom,  120.0).background(.white).cornerRadius(38)
           
 
         }
@@ -136,7 +136,7 @@ struct Login: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: 450.0)
-            }.padding(.leading, 100.0).frame(height: 450, alignment: .trailing).padding(.top, -470).zIndex(100)
+            }.padding(.leading, 100.0).frame(height: 450, alignment: .trailing).padding(.top, -450).zIndex(100)
     }
     }.navigationBarBackButtonHidden(true).navigationBarHidden(true)
     }

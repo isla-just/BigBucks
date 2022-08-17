@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct BigBucksApp: App {
+    
+    @AppStorage("isDarkMode") private var isDarkMode = false
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().preferredColorScheme(isDarkMode ? .dark : .light)
         }
     }
 }

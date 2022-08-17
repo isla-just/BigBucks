@@ -120,7 +120,7 @@ struct SignUp: View {
                         .font(.system(size: 18, weight: .medium))
                         .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
                     
-                    NavigationLink(destination: SignUp()){
+                    NavigationLink(destination: Login()){
                     Text("Sign in")
                         .font(.system(size: 18, weight: .semibold))
                         .multilineTextAlignment(.center).foregroundColor(Color("Accent"))
@@ -128,7 +128,7 @@ struct SignUp: View {
                 }
                 .padding(.top)
 
-            }.padding(.bottom,  90.0).background().cornerRadius(38)
+            }.padding(.bottom,  90.0).background(.white).cornerRadius(38)
           
 
         }
