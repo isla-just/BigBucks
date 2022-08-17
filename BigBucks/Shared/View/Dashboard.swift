@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Dashboard: View {
     
+    // MARK: - properties
+    var spends: [Spend] = SpendData
     
     let columns = [GridItem(.flexible(maximum: 190)),
                    GridItem(.fixed(150))]
@@ -46,7 +48,7 @@ struct Dashboard: View {
                             .padding(.leading, 60).padding(.top, 20) .foregroundColor(Color("Primary"))
                         
                         
-                        TextField("Search spending", text: .constant("Search spending"))
+                        TextField("Search spending", text: .constant(""))
                             .background(Color.red.opacity(0))
                             .cornerRadius(5)
                             .padding(.horizontal, 10).padding(.top, 20) .accentColor(Color("Primary"))
@@ -85,152 +87,58 @@ struct Dashboard: View {
                                 .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
                                 .padding()
                         }
-                    }.frame(width: .infinity, height: 27).padding(.leading, 25).padding(.top, 20).padding(.bottom, 30)
+                    }.frame(width: .infinity, height: 27).padding(.leading, 25).padding(.top, 20).padding(.bottom, 0)
                 
                 
                 ScrollView(.vertical){
                     
-                    LazyVGrid(columns: columns) {
-                    
                     VStack{
+         
+                    LazyVGrid(columns: columns) {
+                        
+                        ForEach(spends) {spend in
+                            NavigationLink(destination: Details(spend: spend)) {
+                    
+                                VStack{
 
-                            
-                            Circle()
-                                .fill(Color("Accent"))
-                                .frame(width: 40, height: 40)
-                            
-                            Text("20BB")
-                                .font(.system(size: 30, weight: .semibold))
-                                .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                                .padding(.bottom, 1.0)
-                                .padding(.horizontal, 15)
-                       
-                            Text("Fortnite")
-                                .font(.system(size: 20, weight: .regular))
-                                .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                            Text("12 Jan")
-                                .font(.system(size: 20, weight: .light))
-                                .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                      
-                    }.padding(20).background(
-                        
-                            Rectangle()
-                            .fill(Color.white)
-                            .cornerRadius(20)
-                            .shadow(
-                                color: Color.gray.opacity(0.2),
-                                radius: 20,
-                                x: 0,
-                                y: 2
-                            )
-                    ).padding(.bottom, 25)
-                       
-                        
-                        VStack{
+                                        Circle()
+                                        .fill(spend.circleColor)
+                                            .frame(width: 40, height: 40)
+                                        
+                                        Text("\(spend.cost)BB")
+                                            .font(.system(size: 30, weight: .semibold))
+                                            .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
+                                            .padding(.bottom, 1.0)
+                                            .padding(.horizontal, 15)
+                                   
+                                    Text(spend.name)
+                                            .font(.system(size: 20, weight: .regular))
+                                            .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
+                                    Text(spend.date)
+                                            .font(.system(size: 20, weight: .light))
+                                            .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
+                                  
+                                }.padding(20).background(
+                                    
+                                        Rectangle()
+                                        .fill(Color.white)
+                                        .cornerRadius(20)
+                                        .shadow(
+                                            color: Color.gray.opacity(0.2),
+                                            radius: 20,
+                                            x: 0,
+                                            y: 2
+                                        )
+                                ).padding(.bottom, 25)
 
+                                }.padding(0).padding(.leading, -25)
                                 
-                                Circle()
-                                    .fill(Color("Light1"))
-                                    .frame(width: 40, height: 40)
-                                
-                                Text("20BB")
-                                    .font(.system(size: 30, weight: .semibold))
-                                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                                    .padding(.bottom, 1.0)
-                                    .padding(.horizontal, 15)
-                           
-                                Text("Fortnite")
-                                    .font(.system(size: 20, weight: .regular))
-                                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                                Text("12 Jan")
-                                    .font(.system(size: 20, weight: .light))
-                                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                          
-                        }.padding(20).background(
-                            
-                                Rectangle()
-                                .fill(Color.white)
-                                .cornerRadius(20)
-                                .shadow(
-                                    color: Color.gray.opacity(0.2),
-                                    radius: 20,
-                                    x: 0,
-                                    y: 2
-                                )
-                        ).padding(.bottom, 25)
-                        
-                        VStack{
-
-                                
-                                Circle()
-                                    .fill(Color("Yellows"))
-                                    .frame(width: 40, height: 40)
-                                
-                                Text("20BB")
-                                    .font(.system(size: 30, weight: .semibold))
-                                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                                    .padding(.bottom, 1.0)
-                                    .padding(.horizontal, 15)
-                           
-                                Text("Fortnite")
-                                    .font(.system(size: 20, weight: .regular))
-                                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                                Text("12 Jan")
-                                    .font(.system(size: 20, weight: .light))
-                                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                          
-                        }.padding(20).background(
-                            
-                                Rectangle()
-                                .fill(Color.white)
-                                .cornerRadius(20)
-                                .shadow(
-                                    color: Color.gray.opacity(0.2),
-                                    radius: 20,
-                                    x: 0,
-                                    y: 2
-                                )
-                        ).padding(.bottom, 25)
-                        
-                        VStack{
-
-                                
-                                Circle()
-                                    .fill(Color("Light2"))
-                                    .frame(width: 40, height: 40)
-                                
-                                Text("20BB")
-                                    .font(.system(size: 30, weight: .semibold))
-                                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                                    .padding(.bottom, 1.0)
-                                    .padding(.horizontal, 15)
-                           
-                                Text("Fortnite")
-                                    .font(.system(size: 20, weight: .regular))
-                                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                                Text("12 Jan")
-                                    .font(.system(size: 20, weight: .light))
-                                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                          
-                        }.padding(20).background(
-                            
-                                Rectangle()
-                                .fill(Color.white)
-                                .cornerRadius(20)
-                                .shadow(
-                                    color: Color.gray.opacity(0.2),
-                                    radius: 20,
-                                    x: 0,
-                                    y: 2
-                                )
-                        ).padding(.bottom, 25)
-                        
-                        
-                           
-                       
-                        
-                    }.padding(0).padding(.leading, -25)
-                }.padding(10).frame(width: .infinity, height: 350)
+                            }
+                        }//foreach
+                    
+                    }.padding(10).padding(.top, 20)
+                    
+                }.frame(width: .infinity)
                 
                 
                 
@@ -239,30 +147,33 @@ struct Dashboard: View {
                         .fill(Color("DarkText"))
                         .frame(width: .infinity, height: 90)
 
-                    
+
                     HStack{
-                        
+
                         VStack{
                             Text("home")
                                 .underline(color: Color("Accent"))
                                 .font(.system(size: 20, weight: .regular))
                                 .multilineTextAlignment(.center).foregroundColor(.white)
                         }.padding(.top, -20).padding()
-                        
+
                         VStack{
                             Text("calculator")
                                 .font(.system(size: 20, weight: .regular))
                                 .multilineTextAlignment(.center).foregroundColor(.white)
                         }.padding(.top, -20).padding()
-                        
-                        VStack{
-                            Text("settings")
-                                .font(.system(size: 20, weight: .regular))
-                                .multilineTextAlignment(.center).foregroundColor(.white)
-                        }.padding(.top, -20).padding()
-                        
+
+                        NavigationLink(destination: Settings()){
+                            VStack{
+                                Text("settings")
+                                    .font(.system(size: 20, weight: .regular))
+                                    .multilineTextAlignment(.center).foregroundColor(.white)
+                            }.padding(.top, -20).padding()
+                        }.navigationBarBackButtonHidden(true).navigationBarHidden(true)
+                       
+
                     }.padding(.horizontal, 30)
-                }
+                }.padding(.bottom, 0)
                 
                 
 
@@ -278,7 +189,7 @@ struct Dashboard: View {
             
         
     }
-    }.navigationBarBackButtonHidden(true)
+    }.navigationBarBackButtonHidden(true).navigationBarHidden(true)
     }
 }
 

@@ -125,7 +125,7 @@ struct Settings: View {
             
          
     }
-    }.navigationBarBackButtonHidden(true)
+    }.navigationBarBackButtonHidden(true).navigationBarHidden(true)
     }
 }
 

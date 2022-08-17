@@ -24,6 +24,8 @@
 		048772C9289961F100F156A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048772B7289961F100F156A8 /* Assets.xcassets */; };
 		048772CA289961F100F156A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048772B7289961F100F156A8 /* Assets.xcassets */; };
 		048772D42899635400F156A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048772D32899635400F156A8 /* LaunchScreen.storyboard */; };
+		048E375928AD13C100AAC0E4 /* SpendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E375828AD13C100AAC0E4 /* SpendData.swift */; };
+		048E375B28AD13F700AAC0E4 /* Spend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E375A28AD13F700AAC0E4 /* Spend.swift */; };
 		04F3025928A2A05A00A0F068 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3025828A2A05A00A0F068 /* Login.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		048772C2289961F100F156A8 /* BigBucks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigBucks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048772C4289961F100F156A8 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		048772D32899635400F156A8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		048E375828AD13C100AAC0E4 /* SpendData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendData.swift; sourceTree = "<group>"; };
+		048E375A28AD13F700AAC0E4 /* Spend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spend.swift; sourceTree = "<group>"; };
 		04F3025828A2A05A00A0F068 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +91,7 @@
 		048772B4289961F000F156A8 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				048E375728AD13A700AAC0E4 /* Data */,
 				04336CFD28A40C3600C3CCEF /* Components */,
 				048772DA289980AC00F156A8 /* Model */,
 				048772D9289980A500F156A8 /* View */,
@@ -134,8 +139,17 @@
 			isa = PBXGroup;
 			children = (
 				04591E52289A976100D7BCD3 /* Intro.swift */,
+				048E375A28AD13F700AAC0E4 /* Spend.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		048E375728AD13A700AAC0E4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				048E375828AD13C100AAC0E4 /* SpendData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +251,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048E375928AD13C100AAC0E4 /* SpendData.swift in Sources */,
 				04336CF628A3F4AC00C3CCEF /* SignUp2.swift in Sources */,
+				048E375B28AD13F700AAC0E4 /* Spend.swift in Sources */,
 				048772C7289961F100F156A8 /* ContentView.swift in Sources */,
 				0425D77728A5029000D13F69 /* Settings.swift in Sources */,
 				04336CFA28A3FE2C00C3CCEF /* Dashboard.swift in Sources */,

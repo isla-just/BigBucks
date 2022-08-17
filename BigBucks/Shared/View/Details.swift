@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct Details: View {
+    
+    
+    
+    // MARK: - Properties
+    var spend: Spend
+    
+    
     var body: some View {
         NavigationView{
         ZStack(){
@@ -58,12 +65,7 @@ struct Details: View {
                       
                     }
                  
-                   
-                    
-              
-                    
-                 
-                    
+         
                 
                 }.padding(-40)
                 
@@ -74,12 +76,12 @@ struct Details: View {
                 
                 HStack{
                     Circle()
-                        .fill(Color("Accent"))
+                        .fill(spend.circleColor)
                         .frame(width: 20, height: 20)
                         .padding(2)
 
                     
-                    Text("Fortnite")
+                    Text(spend.name)
                         .font(.system(size: 30, weight: .medium))
                         .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
                         .lineLimit(nil)
@@ -88,12 +90,12 @@ struct Details: View {
                 }  .padding(.top, 80)
              
 
-                Text("Entertainment purchase")
+                Text("\(spend.category) purchase")
                     .font(.system(size: 20, weight: .regular))
                     .multilineTextAlignment(.center).foregroundColor(Color("DarkText")).padding(.top, 1)
 
                 
-                Text("12 January 2022")
+                Text(spend.date)
                     .font(.system(size: 20, weight: .light))
                     .multilineTextAlignment(.center).foregroundColor(Color("DarkText")).padding(.top, 0.1)
     
@@ -101,19 +103,19 @@ struct Details: View {
 
                 ZStack{
                     Circle()
-                        .fill(Color("Accent"))
+                        .fill(spend.circleColor)
                         .frame(width: 64, height: 64)
                     
                     Circle()
-                        .fill(Color("Accent").opacity(0.6))
+                        .fill(spend.circleColor).opacity(0.6)
                         .frame(width: 88, height: 88)
                     
                     
                     Circle()
-                        .fill(Color("Accent").opacity(0.3))
+                        .fill(spend.circleColor).opacity(0.3)
                         .frame(width: 112, height: 112)
                     
-                    Text("-200BB")
+                    Text("-\(spend.cost)BB")
                         .font(.system(size: 70, weight: .semibold))
                         .multilineTextAlignment(.center).foregroundColor(Color("DarkText")).padding(.top, 0.1)
                 
@@ -121,16 +123,16 @@ struct Details: View {
                 
                 ZStack{
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .fill(Color("DarkText").opacity(0.1))
+                        .fill(Color("Card"))
                         .frame(width: .infinity, height: 140)
                         .padding(.horizontal, 35).padding(.top, 20)
 
 
 
-                    TextField("Spending notes", text: .constant("Spending notes"))
-                        .background(Color.red.opacity(0))
+                    TextEditor(text: .constant(spend.notes))
+                        .colorMultiply(Color("Card"))
                         .cornerRadius(5)
-                        .padding(.horizontal, 60).padding(.top, -40) .accentColor(Color("Primary"))
+                        .padding(.horizontal, 60).padding(.top, 40) .accentColor(Color("Primary"))
                         .font(.system(size: 18, weight: .regular)).foregroundColor(Color("DarkText"))
                 }.padding(.top, 20.0)
                 
@@ -160,12 +162,12 @@ struct Details: View {
             
          
     }
-    }.navigationBarBackButtonHidden(true)
+    }.navigationBarBackButtonHidden(true).navigationBarHidden(true)
     }
 }
 
 struct Details_Previews: PreviewProvider {
     static var previews: some View {
-        Details()
+        Details(spend: SpendData[0])
     }
 }

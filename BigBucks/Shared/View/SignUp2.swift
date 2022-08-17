@@ -131,7 +131,7 @@ struct SignUp2: View {
             
          
     }
-    }.navigationBarBackButtonHidden(true)
+    }.navigationBarBackButtonHidden(true).navigationBarHidden(true)
     }
 }
 

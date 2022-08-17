@@ -56,7 +56,7 @@ struct SignUp1: View {
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("Primary"))
                 .ignoresSafeArea()
-        }.navigationBarBackButtonHidden(true)
+        }.navigationBarBackButtonHidden(true).navigationBarHidden(true)
     }
 }
 

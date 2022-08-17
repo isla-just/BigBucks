@@ -117,12 +117,15 @@ struct SignUp3: View {
                 }.navigationBarBackButtonHidden(true)
                 
                 HStack{
-                    Circle()
-                        .fill(Color("Primary"))
-                        .frame(width: 13, height: 13)
+                    
                     Circle()
                         .fill(Color("Primary").opacity(0.6))
                         .frame(width: 8, height: 8)
+                    
+                    Circle()
+                        .fill(Color("Primary"))
+                        .frame(width: 13, height: 13)
+                   
                     
                 }.padding(.top, 20.0)
               
@@ -136,7 +139,7 @@ struct SignUp3: View {
             
          
     }
-    }.navigationBarBackButtonHidden(true)
+    }.navigationBarBackButtonHidden(true).navigationBarHidden(true)
     }
 }
 
