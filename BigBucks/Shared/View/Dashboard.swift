@@ -11,7 +11,8 @@ struct Dashboard: View {
     
     
     // MARK: - properties
-    var spends: [Spend] = SpendData
+    @State var spends: [Spend] = SpendData
+    @State var isSearchText: String = ""
     
     let columns = [GridItem(.flexible(maximum: 190)),
                    GridItem(.fixed(150))]
@@ -49,12 +50,12 @@ struct Dashboard: View {
                             .padding(.leading, 60).padding(.top, 20) .foregroundColor(Color("DarkText"))
                         
                         
-                        TextField("Search spending", text: .constant(""))
+                        TextField("Search spending", text: $isSearchText)
                             .background(Color.red.opacity(0))
                             .cornerRadius(5)
                             .padding(.horizontal, 10).padding(.top, 20) .accentColor(Color("Accent"))
                             .font(.system(size: 18, weight: .regular)).foregroundColor(Color("DarkText"))
-                    }
+                    }  
                   
                 }.padding(.top, 90)
 
@@ -62,31 +63,40 @@ struct Dashboard: View {
            
                     ScrollView(.horizontal){
                         HStack{
-                            Text("All items")
-                                .underline(color: Color("Accent"))
-                                .font(.system(size: 20, weight: .medium))
-                                .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                                .padding()
                             
-                            Text("Snacks")
-                                .font(.system(size: 20, weight: .light))
-                                .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                                .padding()
+                            Button(action: {self.spends = SpendData}, label: {Text("All items")    .underline(color: Color("Accent"))
+                                    .font(.system(size: 20, weight: .medium))
+                                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
+                                    .padding()
+                                
+                            })
                             
-                            Text("Toys")
-                                .font(.system(size: 20, weight: .light))
-                                .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                                .padding()
                             
-                            Text("Entertainment")
-                                .font(.system(size: 20, weight: .light))
-                                .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                                .padding()
+                            Button(action: {self.spends = getSpend(spend: "Snacks")}, label: {Text("Snacks") .font(.system(size: 20, weight: .light))
+                                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
+                                    .padding()
+                                
+                            })
                             
-                            Text("Learning")
-                                .font(.system(size: 20, weight: .light))
-                                .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
-                                .padding()
+                        
+                            Button(action: {self.spends = getSpend(spend: "Toys")}, label: {Text("Toys") .font(.system(size: 20, weight: .light))
+                                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
+                                    .padding()
+                                
+                            })
+                            
+                            Button(action: {self.spends = getSpend(spend: "Entertainment")}, label: {Text("Entertainment") .font(.system(size: 20, weight: .light))
+                                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
+                                    .padding()
+                                
+                            })
+                            
+                            Button(action: {self.spends = getSpend(spend: "Learning")}, label: {Text("Learning") .font(.system(size: 20, weight: .light))
+                                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
+                                    .padding()
+                                
+                            })
+
                         }
                     }.frame(width: .infinity, height: 27).padding(.leading, 25).padding(.top, 20).padding(.bottom, 0)
                 
@@ -193,7 +203,20 @@ struct Dashboard: View {
         
     }
     }.navigationBarBackButtonHidden(true).navigationBarHidden(true)
+            .onChange(of: isSearchText){ _ in
+                if(!isSearchText.isEmpty){
+                    self.spends = SpendData.filter{ $0.name.contains(isSearchText)}
+                }else{
+                    self.spends=SpendData
+                }
+           }
     }
+    
+    func searchData()->[Spend]{
+        
+      return SpendData.filter{ $0.name.contains(isSearchText)}
+    }
+    
 }
 
 struct Dashboard_Previews: PreviewProvider {

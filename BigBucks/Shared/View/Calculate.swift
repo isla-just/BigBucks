@@ -83,11 +83,6 @@ struct Calculate: View {
                 VStack(){
                     
 
-            
-                    
-               
-                        
-                    
                     VStack{
                     ForEach(grid, id: \.self)
                                 {
@@ -109,7 +104,7 @@ struct Calculate: View {
                                         }
                                     }
                                 }
-                    }.padding(.top, 150)
+                    }.padding(.top, 170)
 
                     NavigationLink(destination: Dashboard()){
 
@@ -146,13 +141,19 @@ struct Calculate: View {
                             .font(.system(size: 32, weight: .bold))
                             .multilineTextAlignment(.center).foregroundColor(.white)
                             .padding(.horizontal, 50).padding(.top, 50)
-                    }.padding(.top, -900.0).zIndex(100.00)
+                    }.padding(.top, -930.0).zIndex(100.00)
+                    
+        
               
                 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("Primary"))
             .ignoresSafeArea()
+                
+                Text("See if you'll have enough Big Bucks for your next purchase") .font(.system(size: 18))
+                    .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
+                    .padding(.horizontal, 50).padding(.top, -210)
                 
              
         }
