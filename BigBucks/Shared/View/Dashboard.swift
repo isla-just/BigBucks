@@ -13,9 +13,15 @@ struct Dashboard: View {
     // MARK: - properties
     @State var spends: [Spend] = SpendData
     @State var isSearchText: String = ""
+    @State var activeTab = "All items"
+    
+    @AppStorage("isLoggedIn") var isLoggedIn: Bool = true;
+    
     
     let columns = [GridItem(.flexible(maximum: 190)),
                    GridItem(.fixed(150))]
+    
+    var containerWidth:CGFloat = UIScreen.main.bounds.width - 132.0
     
     
     var body: some View {
@@ -24,10 +30,70 @@ struct Dashboard: View {
             VStack{
             VStack(alignment: .center){
                 
+            
+               
+                ZStack{
+                    Image("CoolCard")
+                         
+                     } .frame(maxWidth: .infinity, maxHeight: 200).padding(.top, 0).zIndex(100)
                 
-           Image("CoolCard")
                 
-            } .frame(maxWidth: .infinity, maxHeight: 200).padding(.top, 60).zIndex(100)
+                    VStack{
+                        HStack{
+                            Text("0BB") .font(.system(size: 20, weight: .semibold))
+                                .multilineTextAlignment(.center).foregroundColor(.white)
+                                .padding(.bottom, 1.0)
+                                .padding(.horizontal, 15)
+                            
+                            Spacer()
+                            Text("600BB") .font(.system(size: 20, weight: .semibold))
+                                .multilineTextAlignment(.center).foregroundColor(.white)
+                                .padding(.bottom, 1.0)
+                                .padding(.horizontal, 15)
+                        }.padding(.horizontal, 70)
+                        
+                     
+                       
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 25, style: .continuous)
+                                .fill(.white).opacity(0.5)
+                                .frame(width: .infinity, height: 10)
+                            
+                            HStack{
+                                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                                    .fill(.white)
+                                    .frame(width: containerWidth * 411/600, height: 10, alignment: .leading)
+                                
+                                Spacer()
+                            }
+                          
+                               
+                        }.padding(.horizontal, 75)
+                        
+                        HStack{
+                            VStack{
+                                Text("spent") .font(.system(size: 15, weight: .semibold)).foregroundColor(.white)
+                                    .multilineTextAlignment(.leading)
+                                    .padding(.top, 8.0).padding(.leading, -20)
+                 
+                                
+                                Text("\(calculateTotalSpend()) BB") .font(.system(size: 20, weight: .bold)).foregroundColor(.white)
+                                    .multilineTextAlignment(.leading)
+                                    .padding(.top, 0)
+                            }
+                            
+                            Spacer()
+                        }.padding(.horizontal, 75)
+                        
+                      
+        
+                    }.frame(maxWidth: .infinity, maxHeight: 200, alignment: .leading).padding(.top, -160).zIndex(100).background(.red)
+                
+                
+            }.frame(maxWidth: .infinity, maxHeight: 200, alignment: .leading).padding(.top, 60).zIndex(100)
+          
+                
+            
             
 
             VStack(){
@@ -64,15 +130,18 @@ struct Dashboard: View {
                     ScrollView(.horizontal){
                         HStack{
                             
-                            Button(action: {self.spends = SpendData}, label: {Text("All items")    .underline(color: Color("Accent"))
-                                    .font(.system(size: 20, weight: .medium))
+                            Button(action: {self.spends = SpendData} , label: {Text("All items")
+                                    .font(.system(size: 20, weight: .light))
                                     .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
                                     .padding()
                                 
                             })
+//
+//                            activeTab = "snacks" / ""
+//                            activeTab == "snack" ? "bold" : "normal"
+//                            activeTab == "all" ? Color("Accent") : .transparent
                             
-                            
-                            Button(action: {self.spends = getSpend(spend: "Snacks")}, label: {Text("Snacks") .font(.system(size: 20, weight: .light))
+                            Button(action: {    self.spends = getSpend(spend: "Snacks")}, label: {Text("Snacks") .font(.system(size: 20, weight: .light))
                                     .multilineTextAlignment(.center).foregroundColor(Color("DarkText"))
                                     .padding()
                                 
@@ -216,6 +285,31 @@ struct Dashboard: View {
         
       return SpendData.filter{ $0.name.contains(isSearchText)}
     }
+    
+    func calculateTotalSpend()-> Int{
+        
+        var total = 0
+        
+        spends.forEach{spend in
+            total += spend.cost
+            
+        }
+        
+        return total
+    }
+    
+        func calculatePercent()-> Int{
+    
+            var currentSpend = 0
+
+            spends.forEach{spend in
+                currentSpend += spend.cost
+            }
+    
+            let percent=(411/600)
+            return percent
+        }
+    
     
 }
 

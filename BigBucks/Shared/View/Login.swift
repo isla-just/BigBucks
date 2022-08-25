@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Login: View {
+    
+    @AppStorage("isLoggedin") var isLoggedin: Bool = false;
+    
     var body: some View {
         NavigationView{
         ZStack(){

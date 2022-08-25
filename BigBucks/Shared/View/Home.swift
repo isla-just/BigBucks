@@ -10,6 +10,8 @@ import SwiftUI
 
 struct Home: View {
     @State private var showWelcomeView = false
+    @AppStorage("isOnboarding") var isOnboarding: Bool = true;
+    
     
     // MARK: - INTROS
     @State var intros: [Intro] = [
@@ -30,8 +32,10 @@ struct Home: View {
         
         NavigationView{
         ZStack {
+            
             ForEach(intros.indices.reversed(), id: \.self){index in
                 //Intro View
+
                 IntroView(intro: intros[index])
                     .clipShape(LiquidShape(offset: intros[index].offset, curvePoint: fakeIndex == index ? 50 : 0))
                     .padding(.trailing, fakeIndex == index ? 0: 0)
@@ -50,20 +54,23 @@ struct Home: View {
                 Spacer()
        
                 NavigationLink(destination: Login()){
-                    Text("Let's Start")
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding(10)
-                        .background(Color("DarkText"))
-                        .clipShape(Capsule())
+       
+                            Text("Let's Start")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .padding(10)
+                                .background(Color("DarkText"))
+                                .clipShape(Capsule())
+                                .padding(2)
+                  
                 }
-            }
+            }//hstack
            
-            .padding(.horizontal, 30.0)
+            .padding(.horizontal, 50.0)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                 
             
-        }
+        }//zstack
         
         .overlay(
             
@@ -72,12 +79,11 @@ struct Home: View {
             }, label: {
                 
                 Image(systemName: "chevron.right")
-                    .padding(.trailing, -10.0)
-                    .padding(.top, 10.0)
-
+                    .padding(.trailing, 0.0)
+                    .padding(.top, 0.0)
                     .font(.title3)
-                    .frame(width: 50, height: 50)
-                    .foregroundColor(Color("DarkText"))
+                    .frame(width: 100, height: 330, alignment: .bottom)
+                    .foregroundColor(Color("DarkText").opacity(0))
                     .contentShape(Rectangle())
                     .gesture(
                     DragGesture()
@@ -124,9 +130,11 @@ struct Home: View {
                     )
                 
             })
-            .offset(y: 53)
+            .offset(y: 2)
             .opacity(isDragging ? 0 : 1)
             .animation(.linear, value: isDragging)
+            .ignoresSafeArea()
+            .zIndex(100)
 
             ,alignment: .topTrailing
 
@@ -148,6 +156,7 @@ struct Home: View {
             fakeIndex = 1
         }
         }.navigationBarBackButtonHidden(true)
+        //navigation view
     }
     
     @ViewBuilder
