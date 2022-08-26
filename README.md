@@ -1,10 +1,10 @@
 <!-- PROJECT LOGO -->
 <br />
 
-![GitHub repo size](https://img.shields.io/github/repo-size/isla-just/BigBucks?color=%23C2C6B1)
-![GitHub watchers](https://img.shields.io/github/watchers/isla-just/BigBucks?color=%23EDC9B5)
-![GitHub language count](https://img.shields.io/github/languages/count/isla-just/BigBucks?color=%23EDC9B5)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/isla-just/BigBucks?color=%23EDC9B5)
+![GitHub repo size](https://img.shields.io/github/repo-size/isla-just/BigBucks?color=%23FE5A59)
+![GitHub watchers](https://img.shields.io/github/watchers/isla-just/BigBucks?color=%23F4B3DD)
+![GitHub language count](https://img.shields.io/github/languages/count/isla-just/BigBucks?color=%23445CC8)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/isla-just/BigBucks?color=%23FDD024)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![Instagram][instagram-shield]][instagram-url]
 
@@ -21,7 +21,7 @@
   <h3 align="center">Big Bucks</h3>
 
   <p align="center">
-    pocket money management for little people<br>
+    pocket money management for kids. Teaching children how to manage their money effectively<br>
       <a href="https://github.com/isla-just/BigBucks"><strong>Explore the docs »</strong></a>
       <br />
       <br />
