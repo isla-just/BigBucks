@@ -8,7 +8,7 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![Instagram][instagram-shield]][instagram-url]
 
-<h6 align="center">Isla Just 200080 IDV 301</h6>
+<h6 align="center">Isla Just 200080 iOS 303</h6>
 <p align="center">
 </br>
    
@@ -18,10 +18,10 @@
   </a>
   </p>
   
-  <h3 align="center">Bloom Inventories</h3>
+  <h3 align="center">Big Bucks</h3>
 
   <p align="center">
-    employee-centred florist inventory management portal<br>
+    pocket money management for little people<br>
       <a href="https://github.com/isla-just/BigBucks"><strong>Explore the docs »</strong></a>
       <br />
       <br />
@@ -45,7 +45,6 @@
    * [Features](#features)
    * [Functionality](#functionality)
 * [Concept Process](#concept-process)
-   * [ERD](#ERD)
    * [Wireframes](#wireframes)
    * [User-flow](#user-flow)
 * [Development Process](#development-process)
@@ -72,18 +71,13 @@
 
 ### Project Description
 
-Bloom Inventories keeps track of bouquets and flowers so that employees can easily manage all three Bloom Inventory locations. 
-
-Grocery flowers are becoming more impersonal and are also insanely expensive - they also die quickly because they aren't fresh. Bloom Inventories takes an employee-centred design approach to allow employees to keep track of flowers and bouquets. Bloom Inventories also does weekly bouquets where people can subscribe and get bouquets sent to their homes every week.
+An iOS application that helps kids manage their monthly pocket money spending. Parents are able to set up their account with a parental pin and set their pocket money. Then kids can log the spending of their pocket money on the app and it is reflected on their Big Bucks card. They can even use the in-app calculator to see if they will have enough Big Bucks for their next purchase. This teaches kids how to manage their money effectively throughout the month - a very valuable skill
 
 ### Built With
 
-* [ASP.NET](https://dotnet.microsoft.com/en-us/apps/aspnet)
-* [mySQL database](https://www.mysql.com/)
-* [C# language](https://docs.microsoft.com/en-us/dotnet/csharp/)
-* [Visual Studio](https://visualstudio.microsoft.com/)
-* [GitHub](https://github.com/)
-* [Mamp](https://www.mamp.info/en/windows/)
+* [XCode](https://developer.apple.com/xcode/)
+* [SwiftUI](https://developer.apple.com/xcode/swiftui/)
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -92,7 +86,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-For development, the latest version (ideally the 2022 preview) of Visual Studio is required - install it with .NET. The latest version can be downloaded from [Visual Studio Download](https://visualstudio.microsoft.com/downloads/)
+For development XCode is required which can be downloaded from [here](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
 
 ### Installation
  
@@ -100,82 +94,77 @@ For development, the latest version (ideally the 2022 preview) of Visual Studio 
 ```sh
 git clone https://github.com/isla-just/BigBucks.git
 ```
-2. Start your MAMP server which can be downloaded  [here](https://www.mamp.info/en/windows/)
+2. Locate the file and open it in XCode
 
-3. Open the solution in Visual Visual Studio
-
-4. Find the migrations folder in the directory and import the bloom.sql file using phpmyadmin
-
-5. Navigate to the Services folder and the Database.cs file and change the database connection string 
-```sh
-	private static string serverConfiguration = @"server=localhost;port=8889 userid=root;password=root;database=bloom";
-```
-6. if neccessary, install respective NuGet Packages
-* XAct.Core.PCL - SHA1 encryption
-* MySQL.Data - sql
-
-7. Build Bloom Inventories!
+3. Chose any simulator you'd like to use and press the play button to run the app
 
 <!-- FEATURES AND FUNCTIONALITY-->
 ## Features and Functionality
 
 ### Features
 
-### Contextual home page
+### Immersive onboarding experience
 
 ![image2][image2]
 
-There is a dynamic slider on the home page as well as a dynamic flower gallery. There is a location section that shows a slideshow of locations. There is also a subscription form that allows you to subscribe for weekly flowers - this includes database verification testing if the email has already been taken as well as user feedback. 
+Interact with the liquid onboarding screens as you learn about the app
 
-### Verify Bloom Inventory employee
-
-![image3][image3]
-
-Unconventional verification has been achived through a popup on the homepage that randomly generates a flower from the database and shows an image of it. The employee must name the flower correcly to move forward. the flower name has been hashed using the cryptographic hash function and there is also security implemented on each employee accessible page
-
-### Dashboard page
+### Login, Signup and account customisation
 
 ![image4][image4]
 
-the dashboard page provides users with an overview of seasonal and low stock flowers based on their location. They are also shown the bouquet of the week where they can generate a new random bouquet. Counters for the location's bouquets and weekly bouquet subscribers are also shown.   
+Login to your account or create a new account and complete the parental setup to set pocket money amount and the parental pin
 
-### Inventory management
+### Dashboard page
+
+![image3][image3]
+
+View your dynamic card balance and a list of your monthly spending   
+
+### Filter and search
+
+Filter and search through spending categories to refine results
+
+### Detailed view
 
 ![image5][image5]
 
-Employees can visualise flowers and packing materials for each location as well as their quantities. Employees can update materials and are given feedback. They can also filter based on category. Location filtering and inventory management can also be done on this page.
+See a detailed view of the spend details, date and notes
 
-### Create bouquets
+### In-app calculator
 
 ![image6][image6]
 
-Employees can see all bouquets in the selected location and they can further filter results according to category as well as change the location. They can see which bouquets can be created and are given a popup walkthrough to craft the bouquet. Once crafted, it is added to the inventory and respective flower quantities are updated accordingly. 
+See if you'll have enough big bucks for your next purchase with the in-app calculator
+
+### Settings page
+
+![image7][image7]
+
+View app and delevoper details
+
+### Appearances
+
+![image8][image8]
+
+Change to an alternative appearance where all the colours and imagery changes
 
 ### Functionality
 
-* `MVC` a model view controller architecture has been used with RazorPages to embed c# code in our html.
-* `ASP form handlers` have been used to handle the submits of all the dynamic forms throughout the website.
-* `local storage` has been used to check if the employee has been verified on every page.
-* `password hashing` SHA1 hashing has been used to hash the flower name in the database.
-* `OOP principles` used to model objects in classes.
-* `database relationships` modelling complex data structures in SQL.
-* `User experience` frontend refinements to cater for good user experience. 
-* `UQL queries` storing session data to output data dynamically on the frontend. 
-* `Crafting bouquets` and updating respective flower quantities accordingly. 
+* `Calculate` using the in app calculator
+* `Search and filter` spends within the application
+* View your `balance` on your digital card
+* Change the `appearance` of your app
+
 
 <!-- CONCEPT PROCESS -->
 ## Concept Process
 
 The `Conceptual Process` is the set of actions, activities and research that was done when starting this project.
 
-### ERD
+### Initial designs
 
 ![image9][image9]
-
-### Wireframes
-
-![image11][image11]
-![image12][image12]
 
 ### User-flow
 
@@ -187,43 +176,44 @@ The `Conceptual Process` is the set of actions, activities and research that was
 
 The `Development Process` is the technical implementations and functionality done in the backend of the application.
 
-![image13][image13]
-
 ### Implementation Process
 
-#### Frontend layout and oject modelling
-I started by designing the frontend of my website using my razorpages as well as regular html and css. I also started implementing some OOP basics in my project so I could start modelling objects
+#### Onboarding sequence
+I started by setting up my project and my Github and then started following a tutorial I found on the liquid onboarding sequence
 
-#### database linking and dynamic data
-Then I did my database link and started modelling my data in my database. I also had to populate my database with all the flowers and bouquets
+#### Frontend development
+Then I focussed on implementing my designs using SwiftUI. I spent some time learning about layouts, grids and UI elements available on the platform
 
-#### CRUD and crafting functionality
-this was the main functionality of this project. All handling as done using asp page handlers on form submits, calling data from the model and the database class
+#### Navigation
+After realising how simple it is to navigate to pages and understanding how Swift navigation bars and tabs work, I was able to implement them in my project.
 
-#### UX, verification, security and frontend refinements
-next I started making my project dynamic with jquery. I also added the unconventional verification and flower hashing. I implemented the security on each page
+#### Mapping and filtering
+Next, I focussed on how I was going to structure my data. I then mapped it on the frontend and implemented the searching and filtering functionality
 
-#### Highlights
+#### App storage 
+Lastly, I did the settings page and set up the alternative appearance of my app. I implemented data storage for light mode and dark mode and on the onboarding screenality
 
-* I really enjoyed being creative with this theme. Once I got the hang of OOP and C#, I ended up really enjoying it
+### Highlights
+
+* I really enjoyed how simple it is to create really beautiful frontends using SwiftUI. I also really enjoyed setting up the alternative appearance of my app and seeing everything come together. I also loved the concept ideation for this project
 
 #### Challenges
 
-* Popups and feedback also proved to be a challenge because of page refreshes after form submits
-* my frontend also took a little longer than expected because I had to rebuild my project after every minor change
+* Initially I struggled with layouts and grids but after getting the hang of it it was super easy. I also struggled coming up with an initial idea that fit the brief but I am so happy with the one that I chose.
 
 
 #### Future Implementation
 
-* A payment portal where you can sell bouquets implementing the Snapscan api
-* Bouquet of the week functionality timer and automation
+* Actually adding a new spend in the future
+* adding charts and graphs to visualise changes
+* a piggy bank feature to put money aside
 
 <!-- MOCKUPS -->
 ## Final Outcome
 
 ### Mockups
 
-![image15][image15]
+![image11][image11]
 
 <!-- VIDEO DEMONSTRATION -->
 ## Video Demonstration
@@ -274,8 +264,11 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* [Visual Studio Documenation](https://docs.microsoft.com/en-us/visualstudio/windows/?view=vs-2019)
-* [StackOverflow](https://stackoverflow.com/)
+* [Kavsoft Swift tutorials](https://www.youtube.com/c/Kavsoft)
+* [CodeWithChris](https://www.youtube.com/c/CodeWithChris)
+* [Liquid swipe tutorial 1](https://iosexample.com/animated-ios-app-onboarding-screens-with-liquid-swipe-animation-using-swiftui/)
+* [Liquid swipe tutorial 2](https://www.youtube.com/watch?v=BQrrNpgDbEg)
+* [Calculator tutorial](https://www.youtube.com/watch?v=uWNP1WM9zHA)
 
 mockups:
 * https://originalmockups.com/mockups/free-mockups
@@ -284,25 +277,24 @@ mockups:
 
 * lecturer: Armand Pretorius https://github.com/ArmandPret
 
-
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/isla-just-b038a2202
 [instagram-shield]: https://img.shields.io/badge/-Instagram-black.svg?style=flat-square&logo=instagram&colorB=555
 [instagram-url]: https://www.instagram.com/dylandasilva.designs/
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[image1]: ReadMeImg/devmockup3.png
-[image2]: ReadMeImg/15.png
-[image3]: ReadMeImg/16.png
-[image4]: ReadMeImg/17.png
-[image5]: ReadMeImg/18.png
-[image6]: ReadMeImg/19.png
-[image9]: ReadMeImg/8.png
-[image10]: ReadMeImg/9.png
-[image11]: ReadMeImg/10.png
-[image12]: ReadMeImg/11.png
-[image13]: ReadMeImg/14.png
-[image14]: ReadMeImg/22.png
+[image1]: ReadMeImg/slide1.png
+[image2]: ReadMeImg/slide2.png
+[image3]: ReadMeImg/slide3.png
+[image4]: ReadMeImg/slide4.png
+[image5]: ReadMeImg/slide5.png
+[image6]: ReadMeImg/slide6.png
+[image7]: ReadMeImg/slide7.png
+[image8]: ReadMeImg/slide8.png
+[image9]: ReadMeImg/slide9.png
+[image10]: ReadMeImg/slide10.png
+[image11]: ReadMeImg/slide11.png
+[image12]: ReadMeImg/slide12.png
 
 [image15]: ReadMeImg/devmockup1.png
 
